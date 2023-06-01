@@ -1,0 +1,28 @@
+header {
+  height: 70px;
+}
+footer {
+  background-color: #007bff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-container {
+  margin-left: auto;
+}
+
+button {
+  margin-left: 10px;
+}
