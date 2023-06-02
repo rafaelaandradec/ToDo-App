@@ -18,16 +18,25 @@ export class TaskFormComponent implements OnInit {
     private taskService: TaskService
   ) {}
 
-   ngOnInit() {
+
+  ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
-      this.task = this.taskService.getById(parseInt(id));
-      this.title = 'Alterando tarefa';
+      const task = this.taskService.getById(parseInt(id));
+      if (task !== undefined) {
+        this.task = task;
+        this.title = 'Alterando tarefa';
+      } else {
+        console.log('A tarefa não existe.');
+      }
     }
-   }
+  }
 
-   onSubmit() {
+  onSubmit() {
+    this.taskService.save(this.task);
+    this.router.navigate(['']);
+  }
 
-   }
+
 
 }
